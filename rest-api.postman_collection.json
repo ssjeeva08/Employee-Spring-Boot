@@ -1,0 +1,124 @@
+{
+  "info": {
+    "_postman_id": "6d672a8d-150c-42e9-a121-27aa583ec9cc",
+    "name": "rest-api",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56586371",
+    "_collection_link": "https://go.postman.co/collection/56586371-6d672a8d-150c-42e9-a121-27aa583ec9cc?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Create one employee",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Successful POST request\", function () {",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+              "});",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"name\": \"Suba\",\n    \"email\":\"suba@gmail.com\",\n    \"department\":\"CSE\",\n    \"salary\": 1000000,\n    \"joinDate\": \"2011-04-05\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "Post data",
+          "host": [
+            "Post data"
+          ]
+        },
+        "description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+      },
+      "response": []
+    },
+    {
+      "name": "Update one employee",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"department\": \"IT\",\r\n    \"email\": \"ssjeeva08@gmail.com\",\r\n    \"id\": 6,\r\n    \"joinDate\": \"2007-07-29\",\r\n    \"name\": \"Jeeva\",\r\n    \"salary\": 200000.00\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "Put data",
+          "host": [
+            "Put data"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete one employee",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "Delete data",
+          "host": [
+            "Delete data"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get one Employee",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5050/api/employees/8",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5050",
+          "path": [
+            "api",
+            "employees",
+            "8"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Employees",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "Get All Employees",
+          "host": [
+            "Get All Employees"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
